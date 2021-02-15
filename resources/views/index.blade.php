@@ -40,21 +40,21 @@
                     @csrf
                     <div class="flex flex-col w-full max-w-xl p-2">
                         <label for="name">Your name</label>
-                        <input id="name" type="text" name="name" class="mt-1 focus:ring-green-500 focus:border-green-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" placeholder="Enter your name">
+                        <input id="name" type="text" name="name" class="mt-1 focus:ring-green-500 focus:border-green-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" placeholder="Enter your name" required>
                         @if ($errors->has('name'))
                             <span class="font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">{{ $errors->first('name') }}</span>
                         @endif
                     </div>
                     <div class="flex flex-col w-full max-w-xl p-2">
                         <label for="email">Your email</label>
-                        <input id="email" type="text" name="email" class="mt-1 focus:ring-green-500 focus:border-green-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" placeholder="Enter your email">
+                        <input id="email" type="text" name="email" class="mt-1 focus:ring-green-500 focus:border-green-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" placeholder="Enter your email" required>
                         @if ($errors->has('email'))
                             <span class="font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">{{ $errors->first('email') }}</span>
                         @endif
                     </div>
                     <div class="flex flex-col w-full max-w-xl p-2">
                         <label for="message">Your message</label>
-                        <textarea id="message" name="message" class="mt-1 focus:ring-green-500 focus:border-green-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" placeholder="What are you looking to build?" rows="3"></textarea>
+                        <textarea id="message" name="message" class="mt-1 focus:ring-green-500 focus:border-green-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" placeholder="What are you looking to build?" rows="3" required></textarea>
                         @if ($errors->has('email'))
                             <span class="font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">{{ $errors->first('message') }}</span>
                         @endif

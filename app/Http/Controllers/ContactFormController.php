@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\ContactForm;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ContactFormSubmitted;
 
 class ContactFormController extends Controller
 {
@@ -47,6 +49,7 @@ class ContactFormController extends Controller
         $form->name = $request->post('name');
         $form->email = $request->post('email');
         $form->message = $request->post('message');
+        Mail::to(env('ADMIN_EMAIL'))->send(new ContactFormSubmitted($form));
         return $form->save();
     }
 
