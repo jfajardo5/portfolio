@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\VisitorController;
+use App\Http\Controllers\ContactFormController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,8 +21,14 @@ Route::get('/', function (Request $request) {
 })->name('index');
 
 Route::post('/contact', function (Request $request) {
-    
+    $controller = new ContactFormController();
+    $controller->store($request);
+    return redirect('/thanks');
 })->name('contact');
+
+Route::get('/thanks', function() {
+    return view('thanks');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');

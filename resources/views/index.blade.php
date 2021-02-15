@@ -41,14 +41,23 @@
                     <div class="flex flex-col w-full max-w-xl">
                         <label for="name">Your name</label>
                         <input id="name" type="text" name="name" class="mt-1 focus:ring-green-500 focus:border-green-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" placeholder="Enter your name">
+                        @if ($errors->has('name'))
+                            <span class="font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">{{ $errors->first('name') }}</span>
+                        @endif
                     </div>
                     <div class="flex flex-col w-full max-w-xl">
                         <label for="email">Your email</label>
                         <input id="email" type="text" name="email" class="mt-1 focus:ring-green-500 focus:border-green-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" placeholder="Enter your email">
+                        @if ($errors->has('email'))
+                            <span class="font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">{{ $errors->first('email') }}</span>
+                        @endif
                     </div>
                     <div class="flex flex-col w-full max-w-xl">
                         <label for="message">Your message</label>
                         <textarea id="message" name="message" class="mt-1 focus:ring-green-500 focus:border-green-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" placeholder="What are you looking to build?" rows="3"></textarea>
+                        @if ($errors->has('email'))
+                            <span class="font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">{{ $errors->first('message') }}</span>
+                        @endif
                     </div>
                     <div class="flex flex-col mx-auto">
                         <input type="submit" class="mt-8 mb-10 w-28 font-bold border border-green-500 bg-green-500 text-white rounded-md px-4 py-2 transition duration-500 ease select-none hover:bg-green-600 focus:outline-none focus:shadow-outline" value="Let's Talk">
