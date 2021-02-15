@@ -5,7 +5,7 @@
         @include('layouts.nav')
         <section class="pt-20 flex flex-col justify-center items-center text-center">
             <img src="{{ mix('images/headshot-circle.jpg') }}" class="w-60 mt-5 pt-5">
-            <p class="text-3xl ml-8 mr-8 max-w-xl">I'm Julio. I am a Web Developer and Programmer Analyst who does amazing things for the travel industry. Based out of Florida, I am a freelance.</p>
+            <p class="text-3xl ml-8 mr-8 max-w-xl">I'm Julio. I am a Web Developer and Programmer Analyst who will build amazing tools for your business. Based out of Florida, I am a freelance.</p>
         </section>
         <section class="flex flex-row justify-around flex-wrap mt-28 max-w-5xl mx-auto">
             <div class="flex flex-col justify-center items-center text-center">
@@ -33,26 +33,26 @@
                 <span class="mt-1">HTML</span>
             </div>
         </section>
-        <section class="bg-gray-100 mt-36">
+        <section id="contact" class="bg-gray-100 mt-36">
             <div class="mb-12 container mx-auto">
-                <h2 class="xs:text-3xl sm:text-3xl md:text-3xl lg:text-5xl text-center p-8 mb-4">Looking to start a project?</h2>
+                <h2 class="xs:text-3xl sm:text-3xl md:text-3xl lg:text-5xl text-center p-12 mb-4">Looking to start a project?</h2>
                 <form action="{{ route('contact') }}" method="POST" class="flex flex-col justify-center justify-items-center items-center p-5">
                     @csrf
-                    <div class="flex flex-col w-full max-w-xl">
+                    <div class="flex flex-col w-full max-w-xl p-2">
                         <label for="name">Your name</label>
                         <input id="name" type="text" name="name" class="mt-1 focus:ring-green-500 focus:border-green-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" placeholder="Enter your name">
                         @if ($errors->has('name'))
                             <span class="font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">{{ $errors->first('name') }}</span>
                         @endif
                     </div>
-                    <div class="flex flex-col w-full max-w-xl">
+                    <div class="flex flex-col w-full max-w-xl p-2">
                         <label for="email">Your email</label>
                         <input id="email" type="text" name="email" class="mt-1 focus:ring-green-500 focus:border-green-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" placeholder="Enter your email">
                         @if ($errors->has('email'))
                             <span class="font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">{{ $errors->first('email') }}</span>
                         @endif
                     </div>
-                    <div class="flex flex-col w-full max-w-xl">
+                    <div class="flex flex-col w-full max-w-xl p-2">
                         <label for="message">Your message</label>
                         <textarea id="message" name="message" class="mt-1 focus:ring-green-500 focus:border-green-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" placeholder="What are you looking to build?" rows="3"></textarea>
                         @if ($errors->has('email'))
@@ -60,10 +60,13 @@
                         @endif
                     </div>
                     <div class="flex flex-col mx-auto">
-                        <input type="submit" class="mt-8 mb-10 w-28 font-bold border border-green-500 bg-green-500 text-white rounded-md px-4 py-2 transition duration-500 ease select-none hover:bg-green-600 focus:outline-none focus:shadow-outline" value="Let's Talk">
+                        <input type="submit" class="mt-8 mb-10 w-28 font-bold border border-green-400 bg-green-400 text-white rounded-md px-4 py-2 transition duration-500 ease select-none hover:bg-green-600 focus:outline-none focus:shadow-outline" value="Let's Talk">
                     </div>
                 </form>
             </div>
         </section>
+        <script>
+        
+        </script>
     </body>
 </html>

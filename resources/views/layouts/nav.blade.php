@@ -11,19 +11,16 @@
         </button>
     </div>
 
-    <div class="w-full flex-grow hidden pt-6 lg:pt-0" id="nav-content">
-        <ul class="list-reset">
+    <div id="nav-content" class="max-h-0 w-full flex-grow pt-6 lg:pt-0 overflow-hidden" style="transition: max-height 0.5s">
+        <ul  class="list-reset">
             <li class="mr-3">
-                <a class="inline-block py-2 px-4 text-black-600 no-underline" href="#">Active</a>
+                <a id="navcontact" class="inline-block text-black-600 no-underline hover:text-green-200 hover:text-underline py-2 px-4 cursor-pointer">Get in touch</a>
             </li>
             <li class="mr-3">
-                <a class="inline-block text-black-600 no-underline hover:text-green-200 hover:text-underline py-2 px-4" href="#">link</a>
+                <a href="https://twitter.com/jumfdoh" target="_blank" class="inline-block text-black-600 no-underline hover:text-green-200 hover:text-underline py-2 px-4" href="#">Follow me on Twitter</a>
             </li>
             <li class="mr-3">
-                <a class="inline-block text-black-600 no-underline hover:text-green-200 hover:text-underline py-2 px-4" href="#">link</a>
-            </li>
-            <li class="mr-3">
-                <a class="inline-block text-black-600 no-underline hover:text-green-200 hover:text-underline py-2 px-4" href="#">link</a>
+                <a href="https://github.com/jfajardo5" target="_blank" class="inline-block text-black-600 no-underline hover:text-green-200 hover:text-underline py-2 px-4" href="#">Check me out on Github</a>
             </li>
         </ul>
     </div>
@@ -31,6 +28,17 @@
 <script>
     //Javascript to toggle the menu
     document.getElementById('nav-toggle').onclick = function(){
-        document.getElementById("nav-content").classList.toggle("hidden");
+        document.getElementById("nav-content").classList.toggle("max-h-32");
+    }
+    document.getElementById("navcontact").addEventListener('click', () => {
+        scrollTo(document.getElementById("contact"));
+    });
+
+    function scrollTo(element) {
+        window.scroll({
+            behavior: 'smooth',
+            left: 0,
+            top: element.offsetTop
+        });
     }
 </script>
