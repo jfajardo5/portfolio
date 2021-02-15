@@ -17,8 +17,8 @@ class CreateVisitorsTable extends Migration
             $table->id();
             $table->text('ip_address');
             $table->text('user_agent');
-            $table->text('hostname');
-            $table->text('referring_url');
+            $table->text('hostname')->nullable();
+            $table->text('referring_url')->nullable();
             $table->timestamps();
         });
     }

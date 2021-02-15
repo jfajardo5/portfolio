@@ -33,9 +33,14 @@ class VisitorController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public static function store(Request $request)
     {
-        //
+        $visitor = new Visitor();
+        $visitor->ip_address = $request->server('REMOTE_ADDR');
+        $visitor->user_agent = $request->server('HTTP_USER_AGENT');
+        $visitor->hostname = $request->server('REMOTE_HOST');
+        $visitor->referring_url = $request->server('HTTP_REFERER');
+        return $visitor->save();
     }
 
     /**

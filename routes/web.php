@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\VisitorController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,12 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/', function (Request $request) {
+    VisitorController::store($request);
     return view('index');
-});
+})->name('index');
 
-Route::post('/contact', function(Request $request) {
-    dd($request);
+Route::post('/contact', function (Request $request) {
+    
 })->name('contact');
 
 Route::get('/dashboard', function () {
