@@ -15,9 +15,10 @@ class Visitor extends Model
      * @var array
      */
     protected $fillable = [
+        'request_uri',
         'ip_address',
         'user_agent',
         'remote_host',
-        'referring_url'
+        'referring_url',
     ];
 }

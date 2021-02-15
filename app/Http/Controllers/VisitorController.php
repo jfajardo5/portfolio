@@ -36,6 +36,7 @@ class VisitorController extends Controller
     public static function store(Request $request)
     {
         $visitor = new Visitor();
+        $visitor->request_uri = $request->server('REQUEST_URI');
         $visitor->ip_address = $request->server('REMOTE_ADDR');
         $visitor->user_agent = $request->server('HTTP_USER_AGENT');
         $visitor->hostname = $request->server('REMOTE_HOST');

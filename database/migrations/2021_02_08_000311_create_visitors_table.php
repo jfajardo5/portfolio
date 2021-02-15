@@ -15,6 +15,7 @@ class CreateVisitorsTable extends Migration
     {
         Schema::create('visitors', function (Blueprint $table) {
             $table->id();
+            $table->text('request_uri');
             $table->text('ip_address');
             $table->text('user_agent');
             $table->text('hostname')->nullable();
