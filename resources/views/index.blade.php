@@ -35,7 +35,7 @@
         </section>
         <section id="contact" class="bg-gray-100 mt-36">
             <div class="mb-12 container mx-auto">
-                <h2 class="xs:text-3xl sm:text-3xl md:text-3xl lg:text-5xl text-center p-12 mb-4">Looking to start a project?</h2>
+                <h2 class="text-3xl sm:text-4xl md:text-4xl lg:text-5xl text-center p-12 mb-4">Looking to start a project?</h2>
                 <form action="{{ route('contact') }}" method="POST" class="flex flex-col justify-center justify-items-center items-center p-5">
                     @csrf
                     <div class="flex flex-col w-full max-w-xl p-2">
