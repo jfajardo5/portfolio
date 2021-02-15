@@ -15,8 +15,7 @@ use App\Http\Controllers\ContactFormController;
 |
 */
 
-Route::get('/', function (Request $request) {
-    VisitorController::store($request);
+Route::get('/', function () { 
     return view('index');
 })->name('index');
 
@@ -28,7 +27,7 @@ Route::post('/contact', function (Request $request) {
 
 Route::get('/thanks', function() {
     return view('thanks');
-});
+})->name('thanks');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
