@@ -12,9 +12,9 @@ class VisitorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public static function index()
     {
-        //
+        return Visitor::orderBy('created_at', 'desc')->get();
     }
 
     /**

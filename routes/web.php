@@ -33,4 +33,12 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
+Route::get('/visitors', function() {
+    return view('visitors')->with('visitors', VisitorController::index());
+})->middleware(['auth'])->name('visitors');
+
+Route::get('/forms', function() {
+    return view('forms');
+})->middleware(['auth'])->name('forms');
+
 require __DIR__.'/auth.php';
