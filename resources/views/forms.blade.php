@@ -24,13 +24,13 @@
                 { headerName: 'Timestamp', field: 'created_at', sortable:true, resizable: true },
             ],
             rowData: [
-                @foreach($forms as $form)
+                @foreach($forms as $entry)
                 { 
-                    ip_address: '{{ $form->ip_address }}',
-                    request_uri: '{{ $form->name }}',
-                    referring_url: '{{ $form->email }}',
-                    user_agent: '{{ $form->message }}',
-                    created_at: '{{ $form->created_at }}',
+                    ip_address: '{{ $entry->ip_address }}',
+                    name: '{{ $entry->name }}',
+                    email: '{{ $entry->email }}',
+                    message: '{{ $entry->message }}',
+                    created_at: '{{ $entry->created_at }}',
                 },
                 @endforeach
             ]
@@ -39,4 +39,5 @@
             var gridDiv = document.querySelector('#forms-grid');
             new agGrid.Grid(gridDiv, gridOptions).gridOptions.api.sizeColumnsToFit();
         });
+    </script>
 </x-app-layout>
