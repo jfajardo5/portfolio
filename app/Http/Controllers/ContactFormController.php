@@ -14,9 +14,9 @@ class ContactFormController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public static function index()
     {
-        //
+        return ContactForm::orderBy('created_at', 'desc')->get();
     }
 
     /**

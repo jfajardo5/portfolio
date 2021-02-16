@@ -38,7 +38,7 @@ Route::get('/visitors', function() {
 })->middleware(['auth'])->name('visitors');
 
 Route::get('/forms', function() {
-    return view('forms');
+    return view('forms')->with('forms', ContactFormController::index());
 })->middleware(['auth'])->name('forms');
 
 require __DIR__.'/auth.php';

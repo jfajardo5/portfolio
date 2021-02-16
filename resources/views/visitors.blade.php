@@ -8,33 +8,38 @@
     <div class="py-12">
         <div class="max-w-screen-2xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
-                    <table class="border-collapse table-auto w-full whitespace-no-wrap bg-white table-striped relative">
-                        <thead>
-                            <tr class="text-left">
-                                <th class="bg-gray-100 sticky top-0 border-b border-gray-200 px-6 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs">IP Address</th>
-                                <th class="bg-gray-100 sticky top-0 border-b border-gray-200 px-6 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs">Referring URL</th>
-                                <th class="bg-gray-100 sticky top-0 border-b border-gray-200 px-6 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs">Request URI</th>
-                                <th class="bg-gray-100 sticky top-0 border-b border-gray-200 px-6 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs">User Agent</th>
-                                <th class="bg-gray-100 sticky top-0 border-b border-gray-200 px-6 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs">Hostname</th>
-                                <th class="bg-gray-100 sticky top-0 border-b border-gray-200 px-6 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs">Timestamp</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach($visitors as $visitor)
-                                <tr class="text-center">
-                                    <td class="border-dashed border-t border-gray-200">{{ $visitor->ip_address }}</td>
-                                    <td class="border-dashed border-t border-gray-200">{{ $visitor->referring_url }}</td>
-                                    <td class="border-dashed border-t border-gray-200">{{ $visitor->request_uri }}</td>
-                                    <td class="border-dashed border-t border-gray-200">{{ $visitor->user_agent }}</td>
-                                    <td class="border-dashed border-t border-gray-200">{{ $visitor->hostname }}</td>
-                                    <td class="border-dashed border-t border-gray-200">{{ $visitor->created_at }}</td>
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+                <div class="mx-auto p-6 bg-white border-b border-gray-200">
+                    <div id="visitors-grid" class="mx-auto max-w-full h-96 ag-theme-material"></div>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+        var gridOptions = {
+            columnDefs: [
+                { headerName: 'IP Address', field: 'ip_address', sortable:true, resizable: true },
+                { headerName: 'Request URI', field: 'request_uri', sortable:true, resizable: true },
+                { headerName: 'Referring URL', field: 'referring_url', sortable:true, resizable: true },
+                { headerName: 'User Agent', field: 'user_agent', sortable:true, resizable: true },
+                { headerName: 'Hostname', field: 'hostname', sortable:true, resizable: true },
+                { headerName: 'Timestamp', field: 'created_at', sortable:true, resizable: true }
+            ],
+            rowData: [
+                @foreach($visitors as $visitor)
+                { 
+                    ip_address: '{{ $visitor->ip_address }}',
+                    request_uri: '{{ $visitor->request_uri }}',
+                    referring_url: '{{ $visitor->referring_url }}',
+                    user_agent: '{{ $visitor->user_agent }}',
+                    hostname: '{{ $visitor->hostname }}',
+                    created_at: '{{ $visitor->created_at }}',
+                },
+                @endforeach
+            ]
+        };
+        document.addEventListener('DOMContentLoaded', function() {
+            var gridDiv = document.querySelector('#visitors-grid');
+            new agGrid.Grid(gridDiv, gridOptions).gridOptions.api.sizeColumnsToFit();
+        });
+    </script>
 </x-app-layout>

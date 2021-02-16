@@ -1,1 +1,1 @@
-<img class="w-14" src="{{ mix('images/applogo.png') }}">
+<img class="w-12" src="{{ mix('images/applogo.png') }}">
