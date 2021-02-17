@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class VisitorController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -17,21 +18,12 @@ class VisitorController extends Controller
         return Visitor::orderBy('created_at', 'desc')->get();
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \App\Models\Visitor  $visitor
      */
     public static function store(Request $request)
     {
@@ -44,48 +36,4 @@ class VisitorController extends Controller
         return $visitor->save();
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Visitor  $visitor
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Visitor $visitor)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Visitor  $visitor
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Visitor $visitor)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Visitor  $visitor
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Visitor $visitor)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Visitor  $visitor
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Visitor $visitor)
-    {
-        //
-    }
 }

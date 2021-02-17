@@ -17,9 +17,19 @@ class ContactForm extends Model
     protected $fillable = [
         'ip_address',
         'user_agent',
-        'remote_host',
+        'hostname',
         'name',
         'email',
         'message'
+    ];
+
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
     ];
 }

@@ -20,20 +20,10 @@ class ContactFormController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \App\Models\ContactForm  $contactForm
      */
     public function store(Request $request)
     {
@@ -53,48 +43,4 @@ class ContactFormController extends Controller
         return $form->save();
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\ContactForm  $contactForm
-     * @return \Illuminate\Http\Response
-     */
-    public function show(ContactForm $contactForm)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\ContactForm  $contactForm
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(ContactForm $contactForm)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\ContactForm  $contactForm
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, ContactForm $contactForm)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\ContactForm  $contactForm
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(ContactForm $contactForm)
-    {
-        //
-    }
 }

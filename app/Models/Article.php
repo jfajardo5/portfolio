@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Visitor extends Model
+class Article extends Model
 {
     use HasFactory;
 
@@ -15,11 +15,9 @@ class Visitor extends Model
      * @var array
      */
     protected $fillable = [
-        'request_uri',
-        'ip_address',
-        'user_agent',
-        'hostname',
-        'referring_url',
+        'title',
+        'slug',
+        'body',
     ];
 
     /**
