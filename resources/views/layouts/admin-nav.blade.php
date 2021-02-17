@@ -47,7 +47,6 @@
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
-
                             <x-dropdown-link :href="route('logout')"
                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();">
@@ -75,6 +74,12 @@
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('visitors')" :active="request()->routeIs('visitors')">
+                {{ __('Visitors') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('forms')" :active="request()->routeIs('forms')">
+                {{ __('Form Submissions') }}
             </x-responsive-nav-link>
         </div>
 

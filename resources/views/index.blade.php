@@ -1,5 +1,5 @@
 <x-guest-layout>
-    @include('layouts.guest_nav')
+    @include('layouts.guest-nav')
     <section class="pt-20 flex flex-col justify-center items-center text-center">
         <img src="{{ mix('images/headshot-circle.jpg') }}" class="w-60 mt-5 pt-5">
         <p class="text-3xl ml-8 mr-8 max-w-xl">I'm Julio. I am a Web Developer and Programmer Analyst who will build amazing tools for your business. Based out of Florida, I am a freelance.</p>
@@ -33,7 +33,7 @@
     <section id="contact" class="bg-gray-100 mt-36">
         <div class="mb-12 container mx-auto">
             <h2 class="text-3xl sm:text-4xl md:text-4xl lg:text-5xl text-center p-12 mb-4">Looking to start a project?</h2>
-            @include('forms.contact')
+            <x-forms.contact />
         </div>
     </section>
 </x-guest-layout>

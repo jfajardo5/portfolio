@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\VisitorController;
 use App\Http\Controllers\ContactFormController;
 /*
@@ -15,6 +16,11 @@ use App\Http\Controllers\ContactFormController;
 |
 */
 
+/**
+ * **************
+ * Guest Routes
+ * **************
+ */
 Route::get('/', function () { 
     return view('index');
 })->name('index');
@@ -29,15 +35,29 @@ Route::get('/thanks', function() {
     return view('thanks');
 })->name('thanks');
 
+/**
+ * **************
+ * Admin Routes
+ * **************
+ */
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    Artisan::call('inspire');
+    return view('dashboard')->with('inspire', Artisan::output());
 })->middleware(['auth'])->name('dashboard');
 
-Route::get('/visitors', function() {
+Route::get('/dashboard/new-article', function() {
+    return view('new_article');
+})->middleware(['auth'])->name('new-article');
+
+Route::post('/dashboard/new-article', function(Request $request) {
+    dd($request);
+})->middleware(['auth'])->name('new-article');
+
+Route::get('/dashboard/visitors', function() {
     return view('visitors')->with('visitors', VisitorController::index());
 })->middleware(['auth'])->name('visitors');
 
-Route::get('/forms', function() {
+Route::get('/dashboard/forms', function() {
     return view('forms')->with('forms', ContactFormController::index());
 })->middleware(['auth'])->name('forms');
 
