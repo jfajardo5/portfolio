@@ -34,12 +34,8 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 Route::get('/visitors', function() {
-    return view('visitors');
+    return view('visitors')->with('visitors', VisitorController::index());
 })->middleware(['auth'])->name('visitors');
-
-Route::post('/ag-visitors', function() {
-    
-})->name('ag-visitors');
 
 Route::get('/forms', function() {
     return view('forms')->with('forms', ContactFormController::index());
