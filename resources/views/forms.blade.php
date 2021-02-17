@@ -29,7 +29,7 @@
                     ip_address: '{{ $entry->ip_address }}',
                     name: '{{ $entry->name }}',
                     email: '{{ $entry->email }}',
-                    message: '{{ @json($entry->message) }}',
+                    message: '@json($entry->message)',
                     created_at: '{{ $entry->created_at }}',
                 },
                 @endforeach
