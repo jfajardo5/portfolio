@@ -15,7 +15,7 @@ class ArticleController extends Controller
      */
     public static function index()
     {
-        return Article::orderBy('created_at', 'desc')->get()->paginate(10);
+        return view('new_article');
     }
 
     /**
