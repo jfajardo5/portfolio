@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    @include('layouts.head')
-    <body class="antialiased flex flex-col justify-center items-center text-center">
+<x-guest-layout>
+    <div class="flex flex-col justify-center items-center">
+        <p class="text-4xl p-3 mt-16 font-bold">Your message has been sent</p>
         <a href="{{ route('index') }}"><img src="{{ mix('images/monkey.png') }}"></a>
-        <p class="text-xl">Your message has been sent</p>
-        <p class="text-xl">I'll be in touch soon!</p>
-    </body>
-</html>
+        <p class="text-5xl p-3">I'll be in touch soon!</p>
+    </div>
+</x-guest-layout>

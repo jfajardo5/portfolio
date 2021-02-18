@@ -14,16 +14,26 @@ class ContactFormController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public static function index()
+    public function index()
     {
-        return ContactForm::orderBy('created_at', 'desc')->get();
+        return view('forms')->with('forms', ContactForm::orderBy('created_at', 'desc')->get());
+    }
+
+    /**
+     * List all stored resources
+     * 
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\Client\Response
+     */
+    public function list() {
+        return view('forms')->with('forms', ContactForm::orderBy('created_at', 'desc')->get());
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \App\Models\ContactForm  $contactForm
+     * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
@@ -39,8 +49,10 @@ class ContactFormController extends Controller
         $form->name = $request->post('name');
         $form->email = $request->post('email');
         $form->message = $request->post('message');
+        $form->save();
         Mail::to(env('ADMIN_EMAIL'))->send(new ContactFormSubmitted($form));
-        return $form->save();
+
+        return redirect()->route('thanks');
     }
 
 }

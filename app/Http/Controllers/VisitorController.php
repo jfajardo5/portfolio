@@ -9,15 +9,33 @@ class VisitorController extends Controller
 {
 
     /**
-     * Display a listing of the resource.
+     * Display index page.
      *
      * @return \Illuminate\Http\Response
      */
-    public static function index()
+    public function index()
     {
-        return Visitor::orderBy('created_at', 'desc')->get();
+        return view('index');
     }
 
+    /**
+     * Display thank you page.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function thanks() {
+        return view('thanks');
+    }
+
+    /**
+     * List all stored resources
+     * 
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\Client\Response
+     */
+    public function list() {
+        return view('visitors')->with('visitors', Visitor::orderBy('created_at', 'desc')->get());
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -33,7 +51,10 @@ class VisitorController extends Controller
         $visitor->user_agent = $request->server('HTTP_USER_AGENT');
         $visitor->hostname = $request->server('REMOTE_HOST');
         $visitor->referring_url = $request->server('HTTP_REFERER');
+
         return $visitor->save();
     }
+
+    
 
 }

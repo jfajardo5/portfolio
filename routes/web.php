@@ -1,10 +1,10 @@
 <?php
-
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Artisan;
+
 use App\Http\Controllers\VisitorController;
 use App\Http\Controllers\ContactFormController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ArticleController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,44 +21,30 @@ use App\Http\Controllers\ContactFormController;
  * Guest Routes
  * **************
  */
-Route::get('/', function () { 
-    return view('index');
-})->name('index');
+Route::get('/', [VisitorController::class, 'index'])->name('index');
 
-Route::post('/contact', function (Request $request) {
-    $controller = new ContactFormController();
-    $controller->store($request);
-    return redirect('/thanks');
-})->name('contact');
+Route::post('/contact', [ContactFormController::class, 'store'])->name('contact');
 
-Route::get('/thanks', function() {
-    return view('thanks');
-})->name('thanks');
+Route::get('/thanks', [VisitorController::class, 'thanks'])->name('thanks');
 
 /**
  * **************
  * Admin Routes
  * **************
  */
-Route::get('/dashboard', function () {
-    Artisan::call('inspire');
-    return view('dashboard')->with('inspire', Artisan::output());
-})->middleware(['auth'])->name('dashboard');
+Route::group(['prefix' => '/dashboard', 'middleware' => ['auth']], function() {
 
-Route::get('/dashboard/new-article', function() {
-    return view('new_article');
-})->middleware(['auth'])->name('new-article');
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+    
+    Route::get('/new-article', [ArticleController::class, 'index'])->name('new-article');
+    
+    Route::post('/new-article', [ArticleController::class, 'store'])->name('new-article');
+    
+    Route::get('/visitors', [VisitorController::class, 'list'])->name('visitors');
 
-Route::post('/dashboard/new-article', function(Request $request) {
-    dd($request);
-})->middleware(['auth'])->name('new-article');
+    Route::get('/forms', [ContactFormController::class, 'list'])->name('forms');
 
-Route::get('/dashboard/visitors', function() {
-    return view('visitors')->with('visitors', VisitorController::index());
-})->middleware(['auth'])->name('visitors');
+});
 
-Route::get('/dashboard/forms', function() {
-    return view('forms')->with('forms', ContactFormController::index());
-})->middleware(['auth'])->name('forms');
 
 require __DIR__.'/auth.php';
