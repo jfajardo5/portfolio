@@ -7,10 +7,9 @@
 
         <title>Julio Fajardo | Web Dev</title>
         <link rel="shortcut icon" href="{{ mix('images/favicon.ico') }}">
-        <!-- Fonts -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
-
-        <!-- Styles -->
+        <link rel="apple-touch-icon" href="{{ mix('images/applogo.png') }}">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
         <!-- Scripts -->
