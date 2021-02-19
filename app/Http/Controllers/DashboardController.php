@@ -1,8 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Support\Facades\Artisan;
+use Illuminate\Foundation\Inspiring;
 
 class DashboardController extends Controller
 {
@@ -13,7 +12,6 @@ class DashboardController extends Controller
      */
     public static function index()
     {
-        Artisan::call('inspire');
-        return view('dashboard')->with('inspire', Artisan::output());
+        return view('dashboard')->with('inspire', Inspiring::quote());
     }
 }

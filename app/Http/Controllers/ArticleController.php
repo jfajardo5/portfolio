@@ -46,8 +46,9 @@ class ArticleController extends Controller
         $article->title = $request->post('title');
         $article->slug = $request->post('slug');
         $article->body = $request->post('body');
-
-        return $article->save();
+        $article->save();
+        
+        return redirect(route('dashboard'));
     }
 
     /**

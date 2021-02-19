@@ -16,7 +16,7 @@ class ContactFormController extends Controller
      */
     public function index()
     {
-        return view('forms')->with('forms', ContactForm::orderBy('created_at', 'desc')->get());
+        
     }
 
     /**

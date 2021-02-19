@@ -22,7 +22,7 @@ class VisitorTest extends TestCase
             'message' => 'Test message'
         ]);
         
-        $response->assertRedirect(route('thanks'));
+        $response->assertSessionHasNoErrors();
     }
 
     public function test_contact_form_cannot_be_submitted_without_name_parameter()

@@ -21,6 +21,7 @@ use App\Http\Controllers\ArticleController;
  * Guest Routes
  * **************
  */
+
 Route::get('/', [VisitorController::class, 'index'])->name('index');
 
 Route::post('/contact', [ContactFormController::class, 'store'])->name('contact');
@@ -32,6 +33,7 @@ Route::get('/thanks', [VisitorController::class, 'thanks'])->name('thanks');
  * Admin Routes
  * **************
  */
+
 Route::group(['prefix' => '/dashboard', 'middleware' => ['auth']], function() {
 
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
