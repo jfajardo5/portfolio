@@ -26,7 +26,7 @@ class ContactFormController extends Controller
      * @return \Illuminate\Http\Client\Response
      */
     public function list() {
-        return view('forms')->with('forms', ContactForm::orderBy('created_at', 'desc')->get());
+        return view('forms')->with('forms', ContactForm::orderBy('created_at', 'desc')->paginate(3));
     }
 
     /**
