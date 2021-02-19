@@ -25,7 +25,7 @@
                                     <td class="px-6 py-4 whitespace-nowrap">{{ $visitor->ip_address }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap">{{ $visitor->request_uri }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap">{{ $visitor->referring_url }}</td>
-                                    <td class="px-6 py-4 whitespace-nowrap">{{ $visitor->user_agent }}</td>
+                                    <td class="px-6 py-4 whitespace-wrap">{{ $visitor->user_agent }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap">{{ $visitor->hostname }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap">{{ $visitor->created_at }}</td>
                                 </tr>
