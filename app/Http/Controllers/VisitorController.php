@@ -34,7 +34,7 @@ class VisitorController extends Controller
      * @return \Illuminate\Http\Client\Response
      */
     public function list() {
-        return view('visitors')->with('visitors', Visitor::orderBy('created_at', 'desc')->paginate(5));
+        return view('visitors')->with('visitors', Visitor::orderBy('created_at', 'desc')->paginate(7));
     }
 
     /**

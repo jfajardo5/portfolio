@@ -23,7 +23,7 @@
                             @foreach($visitors as $visitor)
                                 <tr class="text-sm text-gray-500 hover:bg-green-200 font-bold transition">
                                     <td class="px-6 py-4 whitespace-nowrap">{{ $visitor->ip_address }}</td>
-                                    <td class="px-6 py-4 whitespace-nowrap">{{ $visitor->request_uri }}</td>
+                                    <td class="px-6 py-4 whitespace-wrap">{{ $visitor->request_uri }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap">{{ $visitor->referring_url }}</td>
                                     <td class="px-6 py-4 whitespace-wrap">{{ $visitor->user_agent }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap">{{ $visitor->hostname }}</td>
