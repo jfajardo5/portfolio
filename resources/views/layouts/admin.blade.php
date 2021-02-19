@@ -13,7 +13,6 @@
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
         <!-- Scripts -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/ag-grid/25.0.1/ag-grid-community.min.js" integrity="sha512-7VPz1NAYcuVu1/eQooUfDUcG2sGRdmy2P9sa6ZgtXOpAVY66bN4u+cDXPcmhrVKA44LdznEEZwMabZ3qO8HB6A==" crossorigin="anonymous" defer></script>
         <script src="{{ mix('js/app.js') }}"></script>
     </head>
     <body class="font-sans antialiased">
