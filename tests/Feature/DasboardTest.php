@@ -32,12 +32,4 @@ class DasboardTest extends TestCase
         $response->assertStatus(200);
     }
 
-    public function test_dashboard_new_article_page_can_be_accessed_by_authenticated_user()
-    {
-        $user = User::get()->first();
-        $response = $this->actingAs($user)->get(route('new-article'));
-        
-        $response->assertStatus(200);
-    }
-
 }
