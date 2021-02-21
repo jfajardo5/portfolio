@@ -86,11 +86,5 @@ class VisitorTest extends TestCase
 
         $this->assertGuest();
     }
-
-    public function test_unauthenticated_users_cannot_access_dashboard_new_article_page() 
-    {
-        $this->get(route('new-article'));
-
-        $this->assertGuest();
-    }
+    
 }

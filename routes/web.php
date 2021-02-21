@@ -38,10 +38,6 @@ Route::group(['prefix' => '/dashboard', 'middleware' => ['auth']], function() {
 
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     
-    Route::get('/new-article', [ArticleController::class, 'index'])->name('new-article');
-    
-    Route::post('/new-article', [ArticleController::class, 'store'])->name('new-article');
-    
     Route::get('/visitors', [VisitorController::class, 'list'])->name('visitors');
 
     Route::get('/forms', [ContactFormController::class, 'list'])->name('forms');
