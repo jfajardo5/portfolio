@@ -2,7 +2,8 @@
     @include('layouts.guest-nav')
     <section class="pt-20 flex flex-col justify-center items-center text-center">
         <img src="{{ mix('images/headshot-circle.jpg') }}" class="w-60 mt-5 pt-5">
-        <p class="text-3xl ml-8 mr-8 max-w-xl">I'm Julio. I am a Web Developer and Programmer Analyst who will build amazing tools for your business. Based out of Florida, I am a freelance.</p>
+        <p class="text-3xl ml-8 mr-8 max-w-xl">I'm Julio.</p>
+        <p class="text-2xl ml-8 mr-8 max-w-xl py-4">I am a Web Developer and Programmer Analyst who will build amazing tools for your business. Based out of Florida, I am a freelance.</p>
     </section>
     <section class="flex flex-row justify-around flex-wrap mt-28 max-w-5xl mx-auto">
         <x-tech-icon label="Laravel">
