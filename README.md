@@ -1,9 +1,9 @@
-<p align="left"><a href="https://jfajardo.us" target="_blank"><img src="https://jfajardo.us/images/applogo.png" width="100"></a></p>
+<p align="left"><a href="https://jfajardo.net" target="_blank"><img src="https://jfajardo.net/images/applogo.png" width="100"></a></p>
 
 
 # About this project
 
-#### This is my developer portfolio website. Through this project, I am practicing my skills and expanding my Laravel knowledge. This website does more than meets the eye, feel free to look through the code! :) 
+#### This is my developer portfolio website. Through this project, I am practicing my skills and expanding my Laravel knowledge. Feel free to look through the code!
 <br/>
 
 # Setting up this website locally
@@ -11,25 +11,25 @@
 
 
 
-## Fedora 33:
-#### Make sure all the Laravel 8 php dependencies are installed on your machine:<br/>
+## Ubuntu 22.04.2 LTS:
+#### Make sure all the Laravel 10 php dependencies are installed on your machine:<br/>
 
 
 ```
-sudo dnf install php php-zip php-mysqlnd php-mcrypt php-xml php-mbstring
+sudo apt install php php-zip php-mysqlnd php-mcrypt php-xml php-mbstring php-mysql php-sqlite3
 ```
 ```
-sudo dnf install composer unzip
+sudo apt install composer unzip
 ```
 ```
-sudo dnf install npm
+sudo apt install npm
 ```
 <br/>
 
-#### Install MySQL (MariaDB in Fedora)
+#### Install MariaDB
 
 ```
-sudo dnf install mysql_server
+sudo apt install mariadb-server
 ```
 ```
 sudo mysql_secure_installation
