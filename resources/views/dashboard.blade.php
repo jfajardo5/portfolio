@@ -11,7 +11,7 @@
                 <div class="p-6 bg-white border-b border-gray-200 text-gray-800">
                     <div class="p-6 shadow-sm sm:rounded-md border-gray-200 text-center">
                         <h3 class="text-xl md:text-3xl font-bold">Something to meditate on</h3>
-                        <p class="italic text-md md:text-xl p-5">{{ $inspire }}</p>
+                        <p class="italic text-md md:text-xl p-5">{{ strip_tags($inspire) }}</p>
                     </div>
                 </div>
             </div>
