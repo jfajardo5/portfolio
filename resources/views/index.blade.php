@@ -3,7 +3,7 @@
     <section class="pt-20 flex flex-col justify-center items-center text-center">
         <img src="{{ mix('images/headshot-circle.jpg') }}" class="w-60 mt-5 pt-5">
         <p class="text-3xl ml-8 mr-8 max-w-xl">I'm Julio.</p>
-        <p class="text-2xl ml-8 mr-8 max-w-xl py-4">I am a Web Developer and Programmer Analyst who will build amazing tools for your business. Based out of Florida, I am a freelance.</p>
+        <p class="text-2xl ml-8 mr-8 max-w-xl py-4">I am a Web Developer and Programmer Analyst who builds amazing tools for business.</p>
     </section>
     <section class="flex flex-row justify-around flex-wrap mt-28 max-w-5xl mx-auto">
         <x-tech-icon label="Laravel">
@@ -21,7 +21,7 @@
     </section>
     <section id="contact" class="bg-gray-100 mt-36">
         <div class="mb-12 container mx-auto">
-            <h2 class="text-3xl sm:text-4xl md:text-4xl lg:text-5xl text-center p-12 mb-4">Looking to start a project?</h2>
+            <h2 class="text-3xl sm:text-4xl md:text-4xl text-center p-10 font-bold">Reach out!</h2>
             <x-forms.contact />
         </div>
     </section>

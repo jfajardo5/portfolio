@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Julio Fajardo | Web Dev</title>
-        <meta name="description" content="I'm Julio. I am a Web Developer and Programmer Analyst who will build amazing tools for your business."/>
+        <meta name="description" content="I am a Web Developer and Programmer Analyst who builds amazing tools for business."/>
         <link rel="shortcut icon" href="{{ mix('images/favicon.ico') }}">
         <link rel="apple-touch-icon" href="{{ mix('images/applogo.png') }}">
         <meta name="apple-mobile-web-app-capable" content="yes">
