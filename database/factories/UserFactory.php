@@ -24,10 +24,10 @@ class UserFactory extends Factory
     public function definition()
     {
         return [
-            'name' => env('ADMIN_NAME'),
-            'email' => env('ADMIN_EMAIL'),
+            'name' => config('settings.admin_name'),
+            'email' => config('settings.admin_email'),
             'email_verified_at' => now(),
-            'password' => Hash::make(env('ADMIN_PASSWORD')), // password
+            'password' => Hash::make(config('settings.admin_password')), // password
             'remember_token' => Str::random(10),
         ];
     }

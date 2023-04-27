@@ -19,8 +19,8 @@ class AuthenticationTest extends TestCase
     {
 
         $response = $this->post(route('login'), [
-            'email' => env('ADMIN_EMAIL'),
-            'password' => env('ADMIN_PASSWORD'),
+            'email' => config('settings.admin_email'),
+            'password' => config('settings.admin_password'),
         ]);
 
         $this->assertAuthenticated();
@@ -31,7 +31,7 @@ class AuthenticationTest extends TestCase
     {
 
         $this->post(route('login'), [
-            'email' => env('ADMIN_EMAIL'),
+            'email' => config('settings.admin_email'),
             'password' => 'wrong-password',
         ]);
 
