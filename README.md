@@ -16,7 +16,7 @@
 
 
 ```
-sudo apt install php php-zip php-xml php-mbstring php-mysql php-sqlite3
+sudo apt install php php-zip php-xml php-mbstring php-curll php-mysql php-sqlite3
 ```
 ```
 sudo apt install composer unzip
